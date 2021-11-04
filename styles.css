@@ -1,0 +1,389 @@
+/* general styles */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+
+
+body{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+i{
+    color: #999;
+}
+h1{
+    font-size: 4em;
+    font-weight: 300;
+    color: #6b6b6b;
+}
+
+p{
+    color: #999;
+    font-size: 1.3em;
+}
+
+body{
+    padding: 10px;
+}
+
+/* header styles */
+header{
+    display: flex;
+    justify-content: space-between;
+    color: #6b6b6b;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo > h2{
+    font-weight: 200;
+}
+
+.logo > img{
+    height: 50px;
+}
+
+a{
+    text-decoration: none;
+    color: #6b6b6b;
+}
+
+nav{
+    width: 15em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+nav a {
+    text-align: center;
+    width: 4em;
+}
+
+
+
+/* about styles */
+.about{
+    padding: 0 20px;
+    display: grid;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "about about about"
+    "card1 card2 card3";
+}
+
+.about h2 {
+    font-weight: 500;
+    color: #6b6b6b;
+}
+
+.about img{
+    width: 100%;
+}
+
+.about-intro{
+    grid-area: about;
+    padding: 50px;
+}
+
+.about-card-1,
+.about-card-2,
+.about-card-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+}
+
+.about-card-1 { grid-area: card1;}
+.about-card-2 { grid-area: card2;}
+.about-card-3 { grid-area: card3;}
+
+/* team styles */
+.team {
+    padding: 50px 0;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: .5fr 1fr 1fr 1fr 1fr .5fr;
+    grid-template-areas: 
+    "teamIntro teamIntro teamIntro teamIntro teamIntro teamIntro"
+    " arrowL team1 team2 team3 team4 arrowR";
+}
+.team h3 {
+    font-size: 1em;
+    font-weight: 500;
+    color: #6b6b6b;
+}
+
+.team-intro{ grid-area: teamIntro;}
+.team-member-1{ grid-area: team1;}
+.team-member-2{ grid-area: team2;}
+.team-member-3{ grid-area: team3;}
+.team-member-4{ grid-area: team4;}
+.arrowLeft{ 
+    grid-area: arrowL;
+    text-align: center;
+    margin: auto 0;
+}
+.arrowRight{ 
+    grid-area: arrowR;
+    text-align: center;
+    margin: auto 0;
+}
+
+.team-intro{
+    text-align: center;
+    padding: 20px 50px;
+}
+
+.team-intro h2{
+    font-size: 3em;
+    font-weight: 300;
+    color: #6b6b6b;
+}
+
+.team-member-1,
+.team-member-2,
+.team-member-3,
+.team-member-4{
+    display: flex;
+    flex-direction: column;
+}
+
+.team img{
+    width: 100% ;
+}
+
+/* footer styles */
+footer {
+    color: #777;
+    background-color: #282828;
+}
+.footer-grid{
+    display: grid;
+    justify-content: center;
+    align-items: start;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "social social social"
+    "address email phone";
+    margin-bottom: 50px;
+}
+
+.social {
+    display: flex;
+    justify-self: center;
+    grid-area: social;
+    margin-bottom: 40px;
+}
+.social > a{
+    margin: 20px 10px;
+    font-weight: 700;
+}
+.address-container, .email-container, .phoneNumber-contianer {
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+text-align: center;
+}
+.address-container {
+    grid-area: address;
+}
+.email-container {
+    grid-area: email;
+}
+.phoneNumber-contianer {
+    grid-area: phone;
+}
+
+footer h2{
+    color: white;
+    font-size: 1.2em;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+footer > div {
+    display: flex;
+    align-items: center;
+    font-weight: 100;
+    font-size: 1em;
+}
+footer > div > i{
+    margin-right: 5px;
+    font-size: 1.7em;
+}
+.copyright {
+    display: flex;
+    flex-direction: column;
+    font-size: smaller;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+
+    .about{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "about"
+        "card1" 
+        "card2" 
+        "card3";
+    }
+    .about-card-1,
+    .about-card-2,
+    .about-card-3 {
+    margin: 0 auto;
+    max-width: 90%;
+    }
+
+    .team {
+        grid-template-columns: .5fr 1fr 1fr .5fr;
+        grid-template-areas: 
+        "teamIntro teamIntro teamIntro teamIntro"
+        "arrowL team1 team2 arrowR"
+        "arrowL team3 team4 arrowR";
+    }
+
+    .footer-grid{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "social address"
+        "email phone";
+    }
+    .social {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 10px;
+    }
+    .address-container,
+    .email-container,
+    .phoneNumber-contianer {
+        margin: 17px 0;
+    }
+    .social a {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .social i {
+        font-size: 2em;
+    }
+    .team i {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    nav {
+        width: 100%;
+        font-size: 1.5em;  
+    }
+
+    .navLink {
+        border: 1px solid black;
+        padding: 5px;
+        border-radius: 5px;
+        color: white;
+        background-color: #282828;
+        box-shadow: 3px 3px 5px rgb(56, 54, 54, .5);
+    }
+
+    .logo {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .logo > h2{
+        font-size: 2em;
+    }
+    .logo > img{
+        height: 75px;
+    }
+
+    .about-intro {
+        padding: 20px;
+    }
+    .about-intro h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+    .about-card-1,
+    .about-card-2,
+    .about-card-3 {
+    margin: 0 auto;
+    max-width: 100%;
+    }
+    .team-intro {
+        padding: 20px 20px;
+    }
+    .team-intro h2 {
+        font-size: 2.4em;
+        padding-bottom: 30px;
+    }
+
+    .team {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "teamIntro"
+        "arrowL" 
+        "team1" 
+        "team2" 
+        "team3" 
+        "team4"
+        "arrowR";
+        padding: 20px 20px;
+    }
+    .team h3 {
+        font-size: 1.5em;
+    }
+
+    .team i {
+        margin-top: 5px;
+        font-size: 1.5em;
+    }
+
+    .team-member-1,
+    .team-member-2,
+    .team-member-3,
+    .team-member-4 {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .arrowLeft,
+    .arrowRight {
+        display: none;
+    }
+
+    .footer-grid{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "social" 
+        "address"
+        "email" 
+        "phone";
+        margin-bottom: 0;
+    }
+
+    .social {
+        margin-bottom: 0;
+    }
+    
+}
